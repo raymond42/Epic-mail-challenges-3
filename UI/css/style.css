@@ -1,4 +1,5 @@
 /* Global */
+
 body{
     padding: 0;
     margin: 0;
@@ -25,6 +26,20 @@ body{
     float: left;
     
     
+  }
+
+  
+  /* signup */
+  #signup-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+  }
+  /* login */
+  #login-page {
+      width: 360px;
+      padding: 8% 0 0;
+      margin: auto;
   }
   .form {
     margin: 0 auto 100px;
@@ -112,3 +127,4 @@ body{
 #login-page .message{
     font-size: 15px;
 }
+
