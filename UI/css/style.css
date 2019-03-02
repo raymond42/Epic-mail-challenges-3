@@ -2,9 +2,7 @@
 body{
     padding: 0;
     margin: 0;
-    background: #ddd;
-    font-family: FontAwesome;
-    font-size: 15px;
+    background: #b3b3b3;
   }
   
   header{
@@ -27,6 +25,18 @@ body{
     float: left;
     
     
+  }
+  /* signup */
+  #signup-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+  }
+  /* login */
+  #login-page {
+      width: 360px;
+      padding: 8% 0 0;
+      margin: auto;
   }
   .form {
     margin: 0 auto 100px;
@@ -59,10 +69,6 @@ body{
     font-size: 14px;
     transition: all 0.3 ease;
     cursor: pointer;
-  }
-  .form button a{
-      text-decoration: none;
-      color: #FFFFFF;
   }
   .form button:hover,.form button:active,.form button:focus {
     background: rgb(17, 17, 17);
@@ -104,7 +110,6 @@ body{
     font-weight: 300;
     color: #1a1a1a;
   }
-
   header .highlight, header .current a{
    	color: #e8491d;
    	font-weight: bold;
@@ -117,6 +122,8 @@ body{
     padding: 8% 0 0;
     margin: auto;
   }
+/* <======================================================================================> */
+
 
   /* login page */
 
@@ -128,7 +135,6 @@ body{
 #login-page .message{
     font-size: 15px;
 }
-
 /* inbox */
 /* header */
 
@@ -202,6 +208,7 @@ body{
     display: block;
   }
 /* <=======================================================================> */
+
 .container1{
   margin: 0;
   padding: 0;
@@ -210,6 +217,7 @@ flex-direction: row;
 background-color: #ddd;
 height: 600px;
 }
+
   .container1{
     margin: 0;
     padding: 0;
@@ -224,9 +232,6 @@ height: 600px;
 
   border-right: 0.5px solid gray;
   /* flex-basis: 20%; */
-#inbox-messages{
-
-  border-right: 0.5px solid gray;
   background-color: #FFFFFF;
   overflow: scroll;
   width: 20%;
@@ -244,11 +249,8 @@ height: 600px;
 
 #inbox-messages .heading1, .heading2{
   border: 1px solid rgb(255, 255, 255);
-}
+  /* background-color: gray; */
   
-}
-#inbox-messages .heading1, .heading2 a{
-  padding-left: 40px;
 }
 
 #inbox-messages .heading1:hover{
@@ -259,16 +261,15 @@ height: 600px;
   background: rgb(223, 52, 52);
   color: white;
   opacity: 100px;
-  padding-left: 30px;
 }
 #inbox-messages .heading2:hover{
   background: black;
 }
 
 #inbox-messages .heading2 a{
-    color:white;
-    font-family: FontAwesome;
-  }
+  color:white;
+  font-family: FontAwesome;
+}
 
 #inbox-messages a{
   text-decoration: none;
@@ -276,6 +277,7 @@ height: 600px;
 }
 
 #reader-message{
+  /* border: 2px solid red; */
   flex-basis: 60%;
   margin: 20px;
   background-color: #ddd;
@@ -313,6 +315,7 @@ height: 600px;
   text-decoration: none;
   color: white;
 }
+
 /* compose message */
 
 #compose{

@@ -1,0 +1,154 @@
+ 
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>EPIC MAIL | Inbox</title>
+	  <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+      <script src="../js/script.js"></script>
+  </head>
+
+  <body>
+
+    <header>
+
+       <!-- nav bar -->
+
+        <div class="container">
+          <h1>Epic Mail</h1>
+        </div>
+        <div class="navbar">
+          <a href="compose.html"><i class="fas fa-pen"></i> New Message</a>
+          <a href="inbox.html"><i class="fas fa-inbox"></i> Inbox</a>
+          <a href="trash.html"> <i class="far fa-envelope"></i> sent messages</a>
+          <a href="drafts.html"><i class="fas fa-save"></i> drafts</a>
+          <a href="trash.html"><i class="fas fa-trash-alt"></i> trash</a>
+          <div class="dropdown">
+            <button class="dropbtn"><i class="fas fa-cog"></i> Settings<i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+              <a href="login.html">logout</a>
+              <a href="password.html">password reset</a>
+            </div>
+          </div> 
+        </div>
+    </header>
+
+    <!-- inbox messages side section -->
+    <div class="container1">
+        
+              <div id="inbox-messages">
+                  <div class="heading1"><h2><a href="compose.html">New Message <i class="fas fa-pen"></i></a></h2></div>
+                  <div class="heading2"><h2><a href="./inbox.html"><i class="fas fa-inbox"></i></i> Inbox</a></h2></div>
+                <ul>
+                  <div class="li">
+                      <a href="#">
+                          <h3>Christian Dalvan</h3>
+                          <p>Hey, I just want to know if you are good and.... <span class="time">10:23PM</span></p>
+                        </a>
+                        <hr>    
+                  </div>
+                  <div class="li">
+                      <a href="#">
+                        <h3>Fred Nkaka</h3>
+                        <p>Hey, I just want to know if you are good and....  <span class="time">10:23PM</span></p>
+                      </a>
+                      <hr>    
+                </div>
+                <div class="li">
+                    <a href="#">
+                      <h3>Lydia Gasana</h3>
+                      <p>Hey, I just want to know if you are good and.... <span class="time">10:23PM</span></p>
+                    </a>
+                    <hr>    
+                </div>
+                <div class="li">
+                    <a href="#">
+                    <h3>Whitney Houston</h3>
+                    <p>Hey, I just want to know if you are good and.... <span class="time">10:23PM</span></p>
+                    </a>
+                  <hr>    
+                </div>
+                <div class="li">
+                    <a href="#">
+                    <h3>Maria carey</h3>
+                    <p>Hey, I just want to know if you are good and.... <span class="time">10:23PM</span></p>
+                    </a>
+                  <hr>    
+                </div>
+                <div class="li">
+                    <a href="#">
+                    <h3>Chris brown</h3>
+                    <p>Hey, I just want to know if you are good and.... <span class="time">10:23PM</span></p>
+                    </a>
+                  <hr>    
+                </div>
+                
+            </div>
+  
+      <!--compose message -->
+    
+            <div id="compose">
+                <div class="title">
+                  <h2>Compose Message <i class="fas fa-edit"></i></h2>
+                </div>
+                <div class="from">
+                  <h4>From: <input type="text"></h4>
+                </div>
+                <hr>
+                <div class="to">
+                    <h4>To: <input type="text"></h4>
+                </div>
+                <hr>
+                <div class="subject">
+                    <h4>Subject: <input type="text"></h4>
+                </div>
+                <div class="text-message">
+                  <textarea placeholder="write your message..."></textarea>
+                </div>
+                <div class="send-button">
+                  <button type="button"><a href="#">Send   <i class="far fa-share-square"></i></a></button>
+                </div>
+            </div>
+
+            <!-- group messages -->
+          <div class="group-msgs">
+              <h3><i class="fas fa-layer-group"></i> Group Messages</h3>
+              <hr>
+                <ul class="list">
+                  <li>
+                    <h4>Group1 <i class="fas fa-envelope"></i></h4>
+                  </li>
+                </ul>
+                <hr>
+                <ul>
+                  <li>
+                    <h4>Group2 <i class="fas fa-envelope"></i></h4>
+                  </li>
+                </ul>
+                <hr>
+                <ul>
+                    <li>
+                      <h4>Group3 <i class="fas fa-envelope"></i></h4>
+                    </li>
+                  </ul>
+                  <hr>
+                  <ul>
+                    <li>
+                      <h4>Group4 <i class="fas fa-envelope"></i></h4>
+                    </li>
+                  </ul>
+                  <hr>
+                  <h3><a href="#"><i class="fas fa-plus-circle"></i> Create Groups</a></h3>
+          </div>
+  
+    </div>
+
+  <!-- Footer -->
+
+     <footer>
+      <p>Epic Mail, Copyright &copy; 2019</p>
+    </footer>
+  </body>
+</html>
