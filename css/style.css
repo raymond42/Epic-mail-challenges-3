@@ -93,7 +93,22 @@ body{
     display: block;
     clear: both;
   }
-  
+  .container .info {
+    margin: 50px auto;
+    text-align: center;
+  }
+  .container .info h1 {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 300;
+    color: #1a1a1a;
+  }
+
+  header .highlight, header .current a{
+   	color: #e8491d;
+   	font-weight: bold;
+   }
 /* <======================================================================================> */
 
 /* signup page */
@@ -187,8 +202,6 @@ body{
     display: block;
   }
 /* <=======================================================================> */
-
-
 .container1{
   margin: 0;
   padding: 0;
@@ -197,7 +210,20 @@ flex-direction: row;
 background-color: #ddd;
 height: 600px;
 }
+  .container1{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: #ddd;
+    height: 600px;
+  }
+/* <=======================================================================> */
 
+#inbox-messages{
+
+  border-right: 0.5px solid gray;
+  /* flex-basis: 20%; */
 #inbox-messages{
 
   border-right: 0.5px solid gray;
@@ -218,6 +244,7 @@ height: 600px;
 
 #inbox-messages .heading1, .heading2{
   border: 1px solid rgb(255, 255, 255);
+}
   
 }
 #inbox-messages .heading1, .heading2 a{
@@ -242,11 +269,6 @@ height: 600px;
     color:white;
     font-family: FontAwesome;
   }
-
-#inbox-messages .heading2 a{
-  color:white;
-  font-family: FontAwesome;
-}
 
 #inbox-messages a{
   text-decoration: none;
@@ -322,6 +344,60 @@ height: 600px;
 #compose .send-button a{
   text-decoration: none;
   color: black;
+}
+
+/* main_inbox messages */
+
+.main{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  background-color: #ddd;
+  height: 600px;
+}
+
+#msgs{
+  /* border: 2px solid red; */
+  flex-basis: 80%;
+  overflow: scroll;
+}
+#msgs h3{
+  padding-left: 40px;
+}
+#msgs ul li{
+  font-size: 12px;
+  list-style: none;
+  /* border: 1px solid #000; */
+}
+
+
+#msgs .info-message{
+  margin-top: -17px;
+  margin-bottom: -10px;
+}
+
+#msgs .info-message a{
+  text-decoration: none;
+  color: black;
+}
+
+#msgs .info-message:hover{
+  background: #666161;
+  text-decoration: none;
+  color: white;
+}
+#msgs .info-message a:hover{
+  color: white;
+}
+.time{
+  float: right;
+  padding-right: 10px;
+}
+
+.info-message p{
+  margin-left: 13px;
+  padding-top:10px;
 }
 
 /*footer*/
