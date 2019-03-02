@@ -5,7 +5,6 @@ body{
     background: #ddd;
     font-family: FontAwesome;
     font-size: 15px;
-    background: #b3b3b3;
   }
   
   header{
@@ -28,18 +27,6 @@ body{
     float: left;
     
     
-  }
-  /* signup */
-  #signup-page {
-    width: 360px;
-    padding: 8% 0 0;
-    margin: auto;
-  }
-  /* login */
-  #login-page {
-      width: 360px;
-      padding: 8% 0 0;
-      margin: auto;
   }
   .form {
     margin: 0 auto 100px;
@@ -117,6 +104,7 @@ body{
     font-weight: 300;
     color: #1a1a1a;
   }
+
   header .highlight, header .current a{
    	color: #e8491d;
    	font-weight: bold;
@@ -129,7 +117,6 @@ body{
     padding: 8% 0 0;
     margin: auto;
   }
-/* <======================================================================================> */
 
   /* login page */
 
@@ -141,6 +128,7 @@ body{
 #login-page .message{
     font-size: 15px;
 }
+
 /* inbox */
 /* header */
 
@@ -233,10 +221,11 @@ height: 600px;
 /* <=======================================================================> */
 
 #inbox-messages{
-  border-right: 0.5px solid gray;
-}
 
+  border-right: 0.5px solid gray;
+  /* flex-basis: 20%; */
 #inbox-messages{
+
   border-right: 0.5px solid gray;
   background-color: #FFFFFF;
   overflow: scroll;
@@ -255,7 +244,8 @@ height: 600px;
 
 #inbox-messages .heading1, .heading2{
   border: 1px solid rgb(255, 255, 255);
-
+}
+  
 }
 #inbox-messages .heading1, .heading2 a{
   padding-left: 40px;
@@ -269,6 +259,7 @@ height: 600px;
   background: rgb(223, 52, 52);
   color: white;
   opacity: 100px;
+  padding-left: 30px;
 }
 #inbox-messages .heading2:hover{
   background: black;
@@ -278,9 +269,6 @@ height: 600px;
     color:white;
     font-family: FontAwesome;
   }
-  color:white;
-  font-family: FontAwesome;
-}
 
 #inbox-messages a{
   text-decoration: none;
@@ -325,6 +313,7 @@ height: 600px;
   text-decoration: none;
   color: white;
 }
+/* compose message */
 
 #compose{
   flex-basis: 60%;
