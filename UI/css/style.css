@@ -1,5 +1,4 @@
 /* Global */
-
 body{
     padding: 0;
     margin: 0;
@@ -27,8 +26,6 @@ body{
     
     
   }
-
-  
   /* signup */
   #signup-page {
     width: 360px;
@@ -113,8 +110,19 @@ body{
     font-weight: 300;
     color: #1a1a1a;
   }
+  header .highlight, header .current a{
+   	color: #e8491d;
+   	font-weight: bold;
+   }
 /* <======================================================================================> */
 
+/* signup page */
+#signup-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+  }
+/* <======================================================================================> */
 
 
   /* login page */
@@ -127,4 +135,279 @@ body{
 #login-page .message{
     font-size: 15px;
 }
+/* inbox */
+/* header */
 
+/* nav bar */
+  
+  .navbar {
+    overflow: hidden;
+    float: right;
+    padding-top:90px;
+    text-transform: uppercase;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  .dropdown-content{
+      transform: translateX(-50px);
+      font-size: 15px;
+  }
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: rgb(20, 19, 19);
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+/* <=======================================================================> */
+
+.container1{
+  margin: 0;
+  padding: 0;
+display: flex;
+flex-direction: row;
+background-color: #ddd;
+height: 600px;
+}
+
+  .container1{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: #ddd;
+    height: 600px;
+  }
+/* <=======================================================================> */
+
+#inbox-messages{
+
+  border-right: 0.5px solid gray;
+  /* flex-basis: 20%; */
+  background-color: #FFFFFF;
+  overflow: scroll;
+  width: 20%;
+  font-size: 13px;
+}
+#inbox-messages .li:hover{
+  transform: scaleY(1.2);
+}
+#inbox-messages .li a:hover{
+  opacity: 1.5;
+  color: #000000;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#inbox-messages .heading1, .heading2{
+  border: 1px solid rgb(255, 255, 255);
+  /* background-color: gray; */
+  
+}
+
+#inbox-messages .heading1:hover{
+  background: gray;
+  color:white;
+}
+#inbox-messages .heading2{
+  background: rgb(223, 52, 52);
+  color: white;
+  opacity: 100px;
+}
+#inbox-messages .heading2:hover{
+  background: black;
+}
+
+#inbox-messages .heading2 a{
+  color:white;
+  font-family: FontAwesome;
+}
+
+#inbox-messages a{
+  text-decoration: none;
+  color: black;
+}
+
+#reader-message{
+  /* border: 2px solid red; */
+  flex-basis: 60%;
+  margin: 20px;
+  background-color: #ddd;
+}
+
+#reader-message img{
+  width:205px;
+  height: 205px;
+  border-radius: 100%;
+}
+
+#reader-message button.reply{
+  width: 80px;
+  height: 40px;
+}
+#reader-message button.forward{
+  width: 90px;
+  height: 40px;
+}
+
+.group-msgs{
+  border: 1px solid ;
+  flex-basis: 20%;
+  background: #35424a;
+  color: #FFFFFF;
+  padding-left: 4px;
+}
+.group-msgs ul li{
+  text-decoration: none;
+  list-style: none;
+
+}
+
+.group-msgs h3 a{
+  text-decoration: none;
+  color: white;
+}
+
+/* compose message */
+
+#compose{
+  flex-basis: 60%;
+}
+
+#compose .title{
+  border: 2px solid rgb(20, 20, 20);
+  background-color:rgb(24, 22, 22);
+  color: #FFFFFF
+}
+
+#compose input{
+  width: 555px;
+  height: 21px;
+  background-color: #ddd;
+  size: 100%;
+}
+#compose .text-message textarea{
+  width: 800px;
+  height: 281px;
+}
+#compose .send-button button{
+  width: 80px;
+  height: 40px;
+  float: right;
+}
+
+#compose .send-button a{
+  text-decoration: none;
+  color: black;
+}
+
+/* main_inbox messages */
+
+.main{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  background-color: #ddd;
+  height: 600px;
+}
+
+#msgs{
+  /* border: 2px solid red; */
+  flex-basis: 80%;
+  overflow: scroll;
+}
+#msgs h3{
+  padding-left: 40px;
+}
+#msgs ul li{
+  font-size: 12px;
+  list-style: none;
+  /* border: 1px solid #000; */
+}
+
+
+#msgs .info-message{
+  margin-top: -17px;
+  margin-bottom: -10px;
+}
+
+#msgs .info-message a{
+  text-decoration: none;
+  color: black;
+}
+
+#msgs .info-message:hover{
+  background: #666161;
+  text-decoration: none;
+  color: white;
+}
+#msgs .info-message a:hover{
+  color: white;
+}
+.time{
+  float: right;
+  padding-right: 10px;
+}
+
+.info-message p{
+  margin-left: 13px;
+  padding-top:10px;
+}
+
+/*footer*/
+footer{
+  padding: 5px;
+  margin-top: 20px;
+  color: #ffffff;
+  background:#35424a;
+  text-align: center;
+}
