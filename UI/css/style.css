@@ -278,9 +278,6 @@ height: 600px;
     color:white;
     font-family: FontAwesome;
   }
-  color:white;
-  font-family: FontAwesome;
-}
 
 #inbox-messages a{
   text-decoration: none;
@@ -335,7 +332,6 @@ height: 600px;
   background-color:rgb(24, 22, 22);
   color: #FFFFFF
 }
-
 #compose input{
   width: 555px;
   height: 21px;
@@ -355,6 +351,9 @@ height: 600px;
 #compose .send-button a{
   text-decoration: none;
   color: black;
+}
+#inbox-messages .li a{
+  list-style: none;
 }
 
 /* main_inbox messages */
