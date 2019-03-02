@@ -1,0 +1,334 @@
+/* Global */
+body{
+    padding: 0;
+    margin: 0;
+    background: #ddd;
+    font-family: FontAwesome;
+    font-size: 15px;
+  }
+  
+  header{
+    background:  rgb(1, 1, 14);
+    height: 150px;
+    border-bottom: rgb(25, 100, 119) 4px solid;
+    border-top:  rgb(25, 100, 119) 3px solid
+    
+  }
+  
+  .container{
+    color: white;
+    width: 80%;
+    float: left;
+  }
+  .container h1{
+    margin: auto;
+    font-size: 40px;
+    padding: 50px 0 20px 10px;
+    float: left;
+    
+    
+  }
+  .form {
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    background: #FFFFFF;
+  }
+  .form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  .form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background:  rgb(115, 116, 122);
+    
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: rgb(231, 225, 225);
+    font-size: 14px;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+  .form button a{
+      text-decoration: none;
+      color: #FFFFFF;
+  }
+  .form button:hover,.form button:active,.form button:focus {
+    background: rgb(17, 17, 17);
+    color: #FFFFFF;
+  }
+  .form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+  }
+  .form .message a {
+    color: rgb(115, 116, 122);
+    text-decoration: none;
+  }
+  
+  .form .message a:hover{
+      color: rgb(3, 3, 3);
+    }
+  
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .container:before, .container:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  
+/* <======================================================================================> */
+
+/* signup page */
+#signup-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+  }
+
+  /* login page */
+
+  #login-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+#login-page .message{
+    font-size: 15px;
+}
+
+/* inbox */
+/* header */
+
+/* nav bar */
+  
+  .navbar {
+    overflow: hidden;
+    float: right;
+    padding-top:90px;
+    text-transform: uppercase;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  .dropdown-content{
+      transform: translateX(-50px);
+      font-size: 15px;
+  }
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: rgb(20, 19, 19);
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+/* <=======================================================================> */
+
+
+.container1{
+  margin: 0;
+  padding: 0;
+display: flex;
+flex-direction: row;
+background-color: #ddd;
+height: 600px;
+}
+
+#inbox-messages{
+
+  border-right: 0.5px solid gray;
+  background-color: #FFFFFF;
+  overflow: scroll;
+  width: 20%;
+  font-size: 13px;
+}
+#inbox-messages .li:hover{
+  transform: scaleY(1.2);
+}
+#inbox-messages .li a:hover{
+  opacity: 1.5;
+  color: #000000;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#inbox-messages .heading1, .heading2{
+  border: 1px solid rgb(255, 255, 255);
+  
+}
+#inbox-messages .heading1, .heading2 a{
+  padding-left: 40px;
+}
+
+#inbox-messages .heading1:hover{
+  background: gray;
+  color:white;
+}
+#inbox-messages .heading2{
+  background: rgb(223, 52, 52);
+  color: white;
+  opacity: 100px;
+  padding-left: 30px;
+}
+#inbox-messages .heading2:hover{
+  background: black;
+}
+
+#inbox-messages .heading2 a{
+    color:white;
+    font-family: FontAwesome;
+  }
+
+#inbox-messages .heading2 a{
+  color:white;
+  font-family: FontAwesome;
+}
+
+#inbox-messages a{
+  text-decoration: none;
+  color: black;
+}
+
+#reader-message{
+  flex-basis: 60%;
+  margin: 20px;
+  background-color: #ddd;
+}
+
+#reader-message img{
+  width:205px;
+  height: 205px;
+  border-radius: 100%;
+}
+
+#reader-message button.reply{
+  width: 80px;
+  height: 40px;
+}
+#reader-message button.forward{
+  width: 90px;
+  height: 40px;
+}
+
+.group-msgs{
+  border: 1px solid ;
+  flex-basis: 20%;
+  background: #35424a;
+  color: #FFFFFF;
+  padding-left: 4px;
+}
+.group-msgs ul li{
+  text-decoration: none;
+  list-style: none;
+
+}
+
+.group-msgs h3 a{
+  text-decoration: none;
+  color: white;
+}
+/* compose message */
+
+#compose{
+  flex-basis: 60%;
+}
+
+#compose .title{
+  border: 2px solid rgb(20, 20, 20);
+  background-color:rgb(24, 22, 22);
+  color: #FFFFFF
+}
+
+#compose input{
+  width: 555px;
+  height: 21px;
+  background-color: #ddd;
+  size: 100%;
+}
+#compose .text-message textarea{
+  width: 800px;
+  height: 281px;
+}
+#compose .send-button button{
+  width: 80px;
+  height: 40px;
+  float: right;
+}
+
+#compose .send-button a{
+  text-decoration: none;
+  color: black;
+}
+
+/*footer*/
+footer{
+  padding: 5px;
+  margin-top: 20px;
+  color: #ffffff;
+  background:#35424a;
+  text-align: center;
+}
