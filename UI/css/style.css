@@ -333,13 +333,13 @@ height: 600px;
   color: #FFFFFF
 }
 #compose input{
-  width: 555px;
-  height: 21px;
+  width: 900px;
+  height: 53px;
   background-color: #ddd;
   size: 100%;
 }
 #compose .text-message textarea{
-  width: 800px;
+  width: 900px;
   height: 281px;
 }
 #compose .send-button button{
