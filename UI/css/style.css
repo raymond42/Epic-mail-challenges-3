@@ -410,6 +410,13 @@ height: 600px;
   padding-top:10px;
 }
 
+#box-form{
+  width:60%;
+  height: 70%;
+  margin: 70px;
+  padding-left: 200px;
+}
+
 /*footer*/
 footer{
   padding: 5px;
