@@ -38,8 +38,8 @@ export const getMessages = ((req,res,next)=>{
    });
 
    export const getOneMessage = ((req,res,next)=>{
-    const email = messages.find(email => email.id === Number(req.params.id));
-    if(!email) res.status(404).send('email not found');
+    const email = messages.find(email => email.id === parseInt(req.params.id));
+    if(!email) res.status(404).send('email you are looking for is not found');
     res.status(200).json({
         status: 200,
         data: email,
@@ -47,6 +47,16 @@ export const getMessages = ((req,res,next)=>{
     })
     next();
    
+   });
+
+   export const getReadMessages = ((req,res,next)=>{
+       const readMessages = messages.filter(email => email.status ==='read');
+       if(!readMessages.length) res.status(404).send('there is no read email');
+       res.status(200).json({
+           status: 200,
+           data: readMessages,
+       });
+       next();
    });
    
 
