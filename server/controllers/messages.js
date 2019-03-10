@@ -105,6 +105,16 @@ export const deleteMessage = ((req,res,next)=>{
    
    });
 
+//  get sent messages
+export const getSentMessages = ((req,res,next)=>{
+    const sentMessages = messages.filter(email => email.status ==='sent');
+    if(!sentMessages.length) res.status(404).send('there is no sent email');
+    res.status(200).json({
+        status: 200,
+        data: sentMessages,
+    });
+    next();
+});
 
 
 
