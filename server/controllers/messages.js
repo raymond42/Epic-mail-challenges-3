@@ -1,6 +1,8 @@
 import messages from '../models/messages';
 import validateMessages from '../helpers/messagesValidation';
 
+
+// compose messages
 export const composeMessages =((req, res, next) =>{
     const {error} = validateMessages.validation(req.body);
     if (error){
@@ -26,6 +28,7 @@ export const composeMessages =((req, res, next) =>{
 
 });
 
+// get all messages
 export const getMessages = ((req,res,next)=>{
     if(!messages.length) res.status(404).send('email not found');
     res.status(200).json({
@@ -37,6 +40,7 @@ export const getMessages = ((req,res,next)=>{
    
    });
 
+//    get one message
    export const getOneMessage = ((req,res,next)=>{
     const email = messages.find(email => email.id === parseInt(req.params.id));
     if(!email) res.status(404).send('email you are looking for is not found');
@@ -49,6 +53,7 @@ export const getMessages = ((req,res,next)=>{
    
    });
 
+//    get read messages
    export const getReadMessages = ((req,res,next)=>{
        const readMessages = messages.filter(email => email.status ==='read');
        if(!readMessages.length) res.status(404).send('there is no read email');
@@ -58,6 +63,17 @@ export const getMessages = ((req,res,next)=>{
        });
        next();
    });
+
+//    get unread messages
+   export const getUnReadMessages = ((req,res,next)=>{
+    const UnReadMessages = messages.filter(email => email.status ==='unread');
+    if(!UnReadMessages.length) res.status(404).send('there is no unread email');
+    res.status(200).json({
+        status: 200,
+        data: UnReadMessages,
+    });
+    next();
+});
    
 
 
