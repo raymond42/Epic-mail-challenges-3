@@ -1,5 +1,11 @@
 import express from 'express';
 import {composeMessages} from '../controllers/messages';
+
+const router = express.Router();
+
+
+router.post('/api/v1/messages',composeMessages);
+
 import {getMessages} from '../controllers/messages';
 import {getOneMessage} from '../controllers/messages';
 import {getReadMessages} from '../controllers/messages';
@@ -18,10 +24,6 @@ router.get('/api/v1/messages/received', getReceivedMessages);
 router.get('/api/v1/messages/sent', getSentMessages);
 router.delete('/api/v1/messages/:id', deleteMessage);
 router.get('/api/v1/messages/:id', getOneMessage);
-
-
-
-
 
 
 

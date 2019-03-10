@@ -1,7 +1,6 @@
 import messages from '../models/messages';
 import validateMessages from '../helpers/messagesValidation';
 
-
 // compose/post messages
 export const composeMessages =((req, res, next) =>{
     const {error} = validateMessages.validation(req.body);
@@ -115,7 +114,3 @@ export const getSentMessages = ((req,res,next)=>{
     });
     next();
 });
-
-
-
-
