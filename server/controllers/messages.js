@@ -36,6 +36,18 @@ export const getMessages = ((req,res,next)=>{
     next();
    
    });
+
+   export const getOneMessage = ((req,res,next)=>{
+    const email = messages.find(email => email.id === Number(req.params.id));
+    if(!email) res.status(404).send('email not found');
+    res.status(200).json({
+        status: 200,
+        data: email,
+        
+    })
+    next();
+   
+   });
    
 
 
