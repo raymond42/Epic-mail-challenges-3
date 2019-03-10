@@ -2,7 +2,7 @@ import messages from '../models/messages';
 import validateMessages from '../helpers/messagesValidation';
 
 
-// compose messages
+// compose/post messages
 export const composeMessages =((req, res, next) =>{
     const {error} = validateMessages.validation(req.body);
     if (error){
@@ -74,8 +74,17 @@ export const getMessages = ((req,res,next)=>{
     });
     next();
 });
-   
 
+// get received emails
+export const getReceivedMessages = ((req,res,next)=>{
+    const receivedMessages = messages.filter(email => email.status ==='received');
+    if(!receivedMessages.length) res.status(404).send('there is no received email');
+    res.status(200).json({
+        status: 200,
+        data: receivedMessages,
+    });
+    next();
+});
 
 
 
