@@ -26,4 +26,18 @@ export const composeMessages =((req, res, next) =>{
 
 });
 
+export const getMessages = ((req,res,next)=>{
+    if(!messages.length) res.status(404).send('email not found');
+    res.status(200).json({
+        status: 200,
+        data: messages,
+        
+    })
+    next();
+   
+   });
+   
+
+
+
 
