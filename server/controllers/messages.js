@@ -86,5 +86,26 @@ export const getReceivedMessages = ((req,res,next)=>{
     next();
 });
 
+//    delete message
+export const deleteMessage = ((req,res,next)=>{
+    const deleteEmail = messages.find(email => email.id === parseInt(req.params.id));
+    
+    if(!deleteEmail) res.status(404).send('no email to delete');
+
+    const index = messages.indexOf(deleteEmail);
+    messages.splice(index, 1)
+    res.status(200).json({
+        status: 200,
+        data:{
+            id: req.params.id,
+            message: 'email deleted'
+        }
+    })
+    next();
+   
+   });
+
+
+
 
 
