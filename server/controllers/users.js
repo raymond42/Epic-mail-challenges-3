@@ -1,11 +1,12 @@
 import users from '../models/users';
-import validateUsers from '../helpers/messagesValidation';
+import validateUsers from '../helpers/usersValidation';
+import lodash from 'lodash'
 
 
 export const signup = ((req,res,next) =>{
     const {error} = validateUsers.validation(req.body);
     if (error){
-        res.status(400).send(error.details[0].user);
+        res.status(400).send(error.details[0].message);
         return;
     }
     
@@ -21,32 +22,7 @@ export const signup = ((req,res,next) =>{
     users.push(newUser);
     res.status(201).json({
         status: 201,
-        data: newUser,
-    })
-    next();
+        data: lodash.pick(newUser,['id','email','firstName','lastName']) 
 });
 
-// import users from '../models/users';
-// import validateUsers from '../helpers/usersValidation';
-
-// export const signup = (req, res, next) => {
-//   const { error } = validateUsers(req.body);
-//   if (error) {
-//     return res.status(400).send({
-//       status: 400,
-//       error: error.details[0].message
-//     });
-//   }
-//   const newUser = {
-//     id: parseInt(users.length + 1, 10),
-//     email: req.body.email || '',
-//     firstname: req.body.firstname || '',
-//     lastname: req.body.lastname || '',
-//     password: req.body.password || ''
-//   };
-//   users.push(newUser);
-//   return res.send(({
-//     status: 201,
-//     data: [newUser]
-//   }));
-// };
+})
