@@ -1,8 +1,8 @@
 import express from 'express';
-import {composeMessages} from '../controllers/messages';
-
 const router = express.Router();
 
+
+import {composeMessages} from '../controllers/messages';
 import {getMessages} from '../controllers/messages';
 import {getOneMessage} from '../controllers/messages';
 import {getReadMessages} from '../controllers/messages';
