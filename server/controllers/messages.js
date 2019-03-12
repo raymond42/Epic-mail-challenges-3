@@ -29,7 +29,7 @@ export const composeMessages =((req, res, next) =>{
 
 // get all messages
 export const getMessages = ((req,res,next)=>{
-    if(!messages.length) res.status(404).send('email not found');
+    if(!messages.length) res.status(404).send('no email found');
     res.status(200).json({
         status: 200,
         data: messages,
