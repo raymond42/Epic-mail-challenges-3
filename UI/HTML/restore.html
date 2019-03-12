@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title>EPIC MAIL | Inbox</title>
+      <title>EPIC MAIL | Compose</title>
 	  <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="../css/style.css">
@@ -16,40 +16,41 @@
 
        <!-- nav bar -->
 
-  <div class="container">
-        <h1>Epic Mail</h1>
-      </div>
-      <div class="navbar">
-        <a href="compose.html">New Message</a>
-        <a class="current" href="inbox.html">Inbox</a>
-        <a href="sent.html">sent messages</a>
-        <a href="drafts.html">drafts</a>
-        <div class="dropdown">
-          <button class="dropbtn">Settings<i class="fa fa-caret-down"></i></button>
-          <div class="dropdown-content">
-            <a href="../index.html">logout</a>
-            <a href="reset.html">password reset</a>
-          </div>
-        </div> 
-      </div>
+        <div class="container">
+          <h1>Epic Mail</h1>
+        </div>
+        <div class="navbar">
+          <a href="compose.html"><i class="fas fa-pen"></i> New Message</a>
+          <a href="inbox.html"><i class="fas fa-inbox"></i> Inbox</a>
+          <a href="sent.html"> <i class="far fa-envelope"></i> sent messages</a>
+          <a href="drafts.html"><i class="fas fa-save"></i> drafts</a>
+          <a href="trash.html"><i class="fas fa-trash-alt"></i> trash</a>
+          <div class="dropdown">
+            <button class="dropbtn"><i class="fas fa-cog"></i> Settings<i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-content">
+              <a href="../index.html">logout</a>
+              <a href="reset.html">password reset</a>
+            </div>
+          </div> 
+        </div>
     </header>
 
     <!-- inbox messages side section -->
     <div class="container1">
         
-              <div id="inbox-messages">
-                  <div class="heading1"><h2><a href="compose.html">New Message <i class="fas fa-pen"></i></a></h2></div>
-                  <div class="heading2"><h2><a href="inbox.html"><i class="fas fa-inbox"></i></i> Inbox</a></h2></div>
+              <!-- <div id="inbox-messages"> -->
+                  <!-- <div class="heading1"><h2><a href="compose.html">New Message <i class="fas fa-pen"></i></a></h2></div>
+                  <div class="heading2"><h2><a href="./inbox.html"><i class="fas fa-inbox"></i></i> Inbox</a></h2></div>
                 <ul>
                   <div class="li">
-                      <a href="#">
+                      <a href="message.html">
                           <h3>Christian Dalvan</h3>
                           <p>Hey, I just want to know if you are good and.... <span class="time">10:23PM</span></p>
                         </a>
                         <hr>    
                   </div>
                   <div class="li">
-                      <a href="#">
+                      <a href="message.html">
                         <h3>Fred Nkaka</h3>
                         <p>Hey, I just want to know if you are good and....  <span class="time">10:23PM</span></p>
                       </a>
@@ -82,25 +83,33 @@
                     <p>Hey, I just want to know if you are good and.... <span class="time">10:23PM</span></p>
                     </a>
                   <hr>    
+                </div> -->
+                
+            <!-- </div> -->
+  
+      <!--compose message -->
+    
+            <div id="restore">
+                <div class="title">
+                  <h2>Compose Message <i class="fas fa-edit"></i></h2>
+                </div>
+                <div class="from">
+                   <input type="text" placeholder="From">
+                </div>
+        
+                <div class="to">
+                  <input type="text" placeholder="To">
                 </div>
                 
-            </div>
-  
-      <!--reader message section -->
-    
-            <div id="reader-message">
-                <img src="../Assets/christian.jpg">
-                <h1>Christian Dalvan</h1>
-                <h3>Subject: Greetings</h3>
-                <div id="buttons">
-                  <a href="./compose.html"><button class="reply"><i class="fas fa-reply"></i> Reply</button></a>
-                  <button class="forward">Forward   <i class="fas fa-arrow-right"></i></button>
+                <div class="subject">
+                  <input type="text" placeholder="Subject">
                 </div>
-                <p>Hey, I just want to know if you are good and your challenges via this form. 
-                    Please note that the deadline for Challenge One is March 1st, 2019 and Challenge Two is March 8th, 2019.</p>
-                    
-                <p>Also, we invite you to dive into our recently published Andela Pre-fellowship Honour Code. At Andela, we hold ourselves to the highest standards and we expect that you do same. As you read through the Honour Code, be as practical as possible. Reflect on your past experiences and make decisions on how you would begin to embody these values
-                  Remember we want you to learn and have fun while you build this project.Best,</p>
+                <div class="text-message">
+                  <textarea placeholder="write your message...">Also, we invite you to dive into our recently published Andela Pre-fellowship Honour Code. At Andela, we hold ourselves to the highest standards and we expect that you do same. As you read through the Honour Code, be as practical as possible. Reflect on your past experiences and make decisions on how you would begin to embody these values. Remember we want you to learn and have fun while you build this project.Best</textarea>
+                </div>
+                <div class="send-button">
+                  <button type="button"><a href="#">Send   <i class="far fa-share-square"></i></a></button>
+                </div>
             </div>
 
             <!-- group messages -->
