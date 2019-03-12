@@ -1,8 +1,8 @@
 import Joi from 'joi';
 
 
-
-const validateUsers = {
+// signup
+const validateUserSignup = {
 
     validation (newUser){
 
@@ -17,4 +17,4 @@ const validateUsers = {
 
 };
 
-export default validateUsers;
+export default validateUserSignup;
