@@ -40,7 +40,7 @@ export const getMessages = ((req,res,next)=>{
    });
 
 //    get one message
-   export const getOneMessage = ((req,res,next)=>{
+   export const getOneMessage = ((req,res)=>{
     const email = messages.find(email => email.id === parseInt(req.params.id));
     if(!email) res.status(404).send('email you are looking for is not found');
     res.status(200).json({
@@ -48,7 +48,6 @@ export const getMessages = ((req,res,next)=>{
         data: email,
         
     })
-    next();
    
    });
 
