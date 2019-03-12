@@ -234,10 +234,6 @@ height: 600px;
 
 #inbox-messages{
   border-right: 0.5px solid gray;
-}
-
-#inbox-messages{
-  border-right: 0.5px solid gray;
   background-color: #FFFFFF;
   overflow: scroll;
   width: 20%;
@@ -340,6 +336,7 @@ height: 600px;
   flex-basis: 60%;
 }
 
+
 #compose .title{
   border: 2px solid rgb(20, 20, 20);
   background-color:rgb(24, 22, 22);
@@ -362,6 +359,39 @@ height: 600px;
 }
 
 #compose .send-button a{
+  text-decoration: none;
+  color: black;
+}
+
+#restore{
+  flex-basis: 80%;
+  margin: 30px;
+  padding-left: 0px;
+}
+#restore .title{
+  width: 900px;
+  border: 2px solid rgb(20, 20, 20);
+  background-color:rgb(24, 22, 22);
+  color: #FFFFFF
+}
+#restore input{
+  width: 900px;
+  height: 53px;
+  background-color: #ddd;
+  size: 100%;
+}
+#restore .text-message textarea{
+  width: 900px;
+  height: 281px;
+}
+#restore .send-button button{
+  width: 80px;
+  height: 35px;
+  /* float: right; */
+  
+}
+
+#restore .send-button a{
   text-decoration: none;
   color: black;
 }
