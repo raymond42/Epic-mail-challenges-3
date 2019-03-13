@@ -73,12 +73,12 @@ export const getContact = ((req,res)=>{
 //    get all contacts
 
 export const getAllContacts = ((req,res)=>{
-    if(!users.length) res.status(404).send('no contact found');
+    if(!users.length) {res.status(404).send('no contact found');}else{
     res.status(200).json({
         status: 200,
         data: users,
         
-    })
+    })}
    
    });
 
