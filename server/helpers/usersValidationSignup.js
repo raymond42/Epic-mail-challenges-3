@@ -7,7 +7,7 @@ const validateUserSignup = {
     validation (newUser){
 
         const newUserSchema ={
-            email: Joi.string().required(),
+            email: Joi.string().email().required(),
             firstName: Joi.string().min(3).required(),
             lastName: Joi.string().min(3).required(),
             password: Joi.string().min(6).max(12).required(),
