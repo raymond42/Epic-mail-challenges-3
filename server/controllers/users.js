@@ -61,12 +61,14 @@ export const login = ((req,res) =>{
 // get a contact
 export const getContact = ((req,res)=>{
     const contact = users.find(contact => contact.id === parseInt(req.params.id));
-    if(!contact) res.status(404).send('contact not found');
+    if(!contact) {res.status(404).send('contact not found');
+    
+}else{
     res.status(200).json({
         status: 200,
         data: contact,
-        
-    })
+        })
+    }
    
    });
 
