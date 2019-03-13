@@ -21,18 +21,3 @@ it('should list ALL users /', (done) => {
       });
   });
 });
-
-// not getting any
-// describe('not getting any user', () => {
-
-//   it('should not get any users /', (done) => {
-//       chai.request(server)
-//         .get('/api/v1/users/contacts')
-//         .end((err, res)=>{
-//           res.should.have.status(404);
-//           res.body.should.be.an('object');
-//           done();
-//         });
-//     });
-//   });
-  
