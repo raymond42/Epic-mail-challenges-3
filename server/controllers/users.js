@@ -6,6 +6,9 @@ import lodash from 'lodash'
 
 // signup
 export const signup = ((req,res) =>{
+    const user = users.find(email => email.email === req.body.email)
+    if (user) return res.send({ status: 400, error: 'The email is already registered' })
+
     const {error} = validateUserSignup.validation(req.body);
     if (error){
         res.status(400).send(error.details[0].message);
@@ -31,6 +34,9 @@ export const signup = ((req,res) =>{
 
 // login
 export const login = ((req,res) =>{
+    const contact = users.find(contact => contact.email === req.body.email)
+    if (contact) return res.send({ status: 400, error: 'you have been already logged in' })
+
     const {error} = validateLogin.validation(req.body);
     if (error){
         res.status(400).send(error.details[0].message);
