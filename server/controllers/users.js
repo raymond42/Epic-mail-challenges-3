@@ -7,16 +7,16 @@ import lodash from 'lodash'
 // signup
 export const signup = ((req,res) =>{
     const user = users.find(email => email.email === req.body.email)
-    if (user) return res.send({ status: 400, error: 'The email is already registered' })
+    if (user) return res.status(400).send({ status: 400, error: 'The email is already registered' })
 
     const {error} = validateUserSignup.validation(req.body);
     if (error){
-        res.status(400).send(error.details[0].message);
+        res.status(400).send({ status: 201,errr: error.details[0].message});
         return;
     }
     
     const _id = parseInt(users.length + 1);
-    const newUser ={
+    const newUser = {
         id: _id,
         email: req.body.email,
         firsName: req.body.firsName,
@@ -25,8 +25,8 @@ export const signup = ((req,res) =>{
     }
 
     users.push(newUser);
-    res.status(200).json({
-        status: 200,
+    res.status(201).send({
+        status: 201,
         data: lodash.pick(newUser,['id','email','firstName','lastName']) 
 });
 
@@ -43,21 +43,14 @@ export const login = ((req,res) =>{
     }
 
     const contact = users.find(contact => contact.email === req.body.email)
-    if (contact) return res.status(500).send({ status: 500, error: 'you have been already logged in' })
-    
-    const _id = parseInt(users.length + 1);
-    const user ={
-        id: _id,
-        email: req.body.email,
-        password: req.body.password,
-    }
-
-    users.push(user);
-    res.status(201).json({
-        status: 201,
-        data: lodash.pick(user,['id','email',]) 
-});
-
+    if (contact) {
+         res.status(200).send(contact)
+    }else{
+    res.status(200).json({
+        status: 200,
+        message: "user not found"
+    })
+}
 })
 
 // get a contact

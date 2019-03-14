@@ -5,13 +5,11 @@ import validateMessages from '../helpers/messagesValidation';
 export const composeMessages =((req, res,) =>{
     const {error} = validateMessages.validation(req.body);
     if (error){
-        res.status(400)} else
-        {
-            send(error.details[0].message);
+        res.status(400).send(error);
         return;
-    }
+    } 
     const _id = parseInt(messages.length + 1);
-    const newMessages ={
+    const newMessages = {
         id: _id,
         createdOn: new Date(),
         subject: req.body.subject,
@@ -88,17 +86,21 @@ export const getReceivedMessages = ((req,res)=>{
 export const deleteMessage = ((req,res)=>{
     const deleteEmail = messages.find(email => email.id === parseInt(req.params.id));
     
-    if(!deleteEmail) res.status(404).send('no email to delete');
+    if(!deleteEmail){
+         res.status(400).send({status: 400,error: 'no email to delete'});
+
+}else{
 
     const index = messages.indexOf(deleteEmail);
     messages.splice(index, 1)
-    res.status(200).json({
+    res.status(200).send({
         status: 200,
         data:{
             id: req.params.id,
             message: 'email deleted'
         }
-    })
+    });
+}
    
    });
 
@@ -110,4 +112,4 @@ export const getSentMessages = ((req,res)=>{
         status: 200,
         data: sentMessages,
     });
-});
+})
