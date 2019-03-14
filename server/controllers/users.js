@@ -46,8 +46,8 @@ export const login = ((req,res) =>{
     if (contact) {
          res.status(200).send(contact)
     }else{
-    res.status(200).json({
-        status: 200,
+    res.status(404).json({
+        status: 404,
         message: "user not found"
     })
 }
@@ -78,7 +78,7 @@ export const getAllContacts = ((req,res)=>{
 
         res.status(200).json({
             status: 200,
-            data: users,
+            data: users
             
         })
     }

@@ -15,13 +15,13 @@ export const composeMessages =((req, res,) =>{
         subject: req.body.subject,
         message: req.body.message,
         parentMessageId: req.body.parentMessageId,
-        status:req.body.status,
+        status:req.body.status
     }
 
     messages.push(newMessages);
     res.status(201).json({
         status: 201,
-        data: newMessages,
+        data: newMessages
     })
 
 });
@@ -31,7 +31,7 @@ export const getMessages = ((req,res)=>{
     if(!messages.length) res.status(404).send('no email found');
     res.status(200).json({
         status: 200,
-        data: messages,
+        data: messages
         
     })
    
@@ -45,7 +45,7 @@ export const getMessages = ((req,res)=>{
         }else{
     res.status(200).json({
         status: 200,
-        data: email,
+        data: email
     
     })
 }
@@ -58,7 +58,7 @@ export const getMessages = ((req,res)=>{
        if(!readMessages.length) res.status(404).send('there is no read email');
        res.status(200).json({
            status: 200,
-           data: readMessages,
+           data: readMessages
        });
    });
 
