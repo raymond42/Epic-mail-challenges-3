@@ -71,7 +71,7 @@ describe('login', () => {
         .post('/api/v1/users/login')
         .send(user)
         .end((err, res)=>{
-          res.should.have.status(201);
+          res.should.have.status(200);
           res.body.should.be.an('object');
           done();
         });
@@ -104,8 +104,9 @@ describe('signup', () => {
         .post('/api/v1/users/signup')
         .send(user)
         .end((err, res)=>{
-          res.should.have.status(200);
-          res.body.should.be.an('object');
+          
+         res.should.be.an('object');
+         res.body.should.be.a.property('status').eql(201);
           done();
         });
     });

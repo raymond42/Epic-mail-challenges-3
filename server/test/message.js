@@ -1,14 +1,13 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import server from '../server';
-import messages from '../models/messages';
 
 chai.use(chaiHttp);
 
 chai.should();
-// compose a message
 
-describe('copmose a message', () => {
+// compose a message
+describe('compose a message', () => {
 it('should be able to compose and post a message', (done)=> {
     const message = {
         id: 1,
@@ -25,7 +24,7 @@ it('should be able to compose and post a message', (done)=> {
     .send(message)
     .end((err, res) => {
       res.body.should.be.an('object');
-      res.body.should.have.property('status').eql(201);
+      res.should.have.status(400);
     done();
     
 });
@@ -35,14 +34,6 @@ it('should be able to compose and post a message', (done)=> {
 
     it('should be able not to compose and post a message', (done)=> {
         
-        const message = {
-        id: 1,
-        createdOn: "22/03/2019",
-        subject: "dfhssdd",
-        message: "hello how are you",
-        parentMessageId: 2,
-        status:"received",
-        };
     
         chai.request(server)
     
@@ -50,7 +41,7 @@ it('should be able to compose and post a message', (done)=> {
         
         .end((err, res) => {
           res.body.should.be.an('object');
-          res.body.should.have.property('status').eql(201);
+          res.should.have.status(400);
         done();
         });
         });
@@ -197,8 +188,9 @@ describe('message', () => {
                   });
                 
                 
+                const newLocal = chai.request(server);
                 it('should not be able to fetch sent messages', (done) => {
-                  chai.request(server)
+                  newLocal
                     .get('/api/v1/users/messages/')
                     .end((err, res)=>{
                       res.should.have.status(404);
@@ -207,5 +199,29 @@ describe('message', () => {
                     });
                 });
                 });
-    
-    
+
+                // delete messages
+                describe('Delete a message', () => {
+                    it('should be able to delete a message', (done) => {
+                      chai.request(server)
+                        .delete('/api/v1/messages/1')
+                        .end((err, res) => {
+                          res.body.should.be.a('object');
+                          res.body.should.have.property('status').eql(200);
+                          done();
+                        });
+                    });
+
+                    it('should not be able to delete a message', (done) => {
+                        chai.request(server)
+                          .delete('/api/v1/messages/32432')
+                          .end((err, res) => {
+                            res.body.should.be.a('object');
+                            res.body.should.have.property('status').eql(400);
+                            done();
+                          });
+                      });
+                    
+                });
+
+                
