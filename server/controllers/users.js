@@ -25,8 +25,8 @@ export const signup = ((req,res) =>{
     }
 
     users.push(newUser);
-    res.status(201).json({
-        status: 201,
+    res.status(200).json({
+        status: 200,
         data: lodash.pick(newUser,['id','email','firstName','lastName']) 
 });
 
