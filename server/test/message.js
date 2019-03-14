@@ -133,7 +133,7 @@ describe('message', () => {
             });
             });
 
-            // get read messages
+            // get unread messages
         describe('message', () => {
 
             it('should be able to get unread mesages', (done) => {
@@ -182,4 +182,30 @@ describe('message', () => {
                     });
                 });
                 });
+
+                // get sent messages
+            describe('sent', () => {
+    
+                it('should be able to fetch sent messages', (done) => {
+                    chai.request(server)
+                      .get('/api/v1/users/messages/sent')
+                      .end((err, res)=>{
+                        res.should.have.status(404);
+                        res.body.should.be.an('object');
+                        done();
+                      });
+                  });
+                
+                
+                it('should not be able to fetch sent messages', (done) => {
+                  chai.request(server)
+                    .get('/api/v1/users/messages/')
+                    .end((err, res)=>{
+                      res.should.have.status(404);
+                      res.body.should.be.an('object');
+                      done();
+                    });
+                });
+                });
+    
     
