@@ -1,6 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import server from '../server';
+import messages from '../models/messages';
 
 chai.use(chaiHttp);
 
@@ -57,3 +58,27 @@ it('should be able to compose and post a message', (done)=> {
   });
   
 
+// get a single message
+describe('message', () => {
+
+    it('should get a specific message', (done) => {
+        chai.request(server)
+          .get('/api/v1/users/messages/1')
+          .end((err, res)=>{
+            res.should.have.status(404);
+            res.body.should.be.an('object');
+            done();
+          });
+      });
+    
+    
+    it('should not be able to get a specific message', (done) => {
+      chai.request(server)
+        .get('/api/v1/users/contact/234344')
+        .end((err, res)=>{
+          res.should.have.status(404);
+          res.body.should.be.an('object');
+          done();
+        });
+    });
+    });
