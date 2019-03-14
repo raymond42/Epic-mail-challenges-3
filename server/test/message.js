@@ -149,7 +149,7 @@ describe('message', () => {
             
             it('should not be able to get unread message', (done) => {
               chai.request(server)
-                .get('/api/v1/users/messages/')
+                .get('/api/v1/users/messages/m')
                 .end((err, res)=>{
                   res.should.have.status(404);
                   res.body.should.be.an('object');
@@ -157,3 +157,29 @@ describe('message', () => {
                 });
             });
             });
+
+             // get received messages
+            describe('received', () => {
+    
+                it('should be able to get received mesages', (done) => {
+                    chai.request(server)
+                      .get('/api/v1/users/messages/received')
+                      .end((err, res)=>{
+                        res.should.have.status(404);
+                        res.body.should.be.an('object');
+                        done();
+                      });
+                  });
+                
+                
+                it('should not be able to get unread message', (done) => {
+                  chai.request(server)
+                    .get('/api/v1/users/messages/m')
+                    .end((err, res)=>{
+                      res.should.have.status(404);
+                      res.body.should.be.an('object');
+                      done();
+                    });
+                });
+                });
+    
