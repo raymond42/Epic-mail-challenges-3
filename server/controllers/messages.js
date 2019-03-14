@@ -42,12 +42,15 @@ export const getMessages = ((req,res)=>{
 //    get one message
    export const getOneMessage = ((req,res)=>{
     const email = messages.find(email => email.id === parseInt(req.params.id));
-    if(!email) res.status(404).send('email you are looking for is not found');
+    if(!email){
+         res.status(404).send('email you are looking for is not found');
+        }else{
     res.status(200).json({
         status: 200,
         data: email,
-        
+    
     })
+}
    
    });
 
