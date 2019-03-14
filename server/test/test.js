@@ -1,8 +1,6 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import server from '../server';
-import users from '../models/users';
-
 
 chai.use(chaiHttp);
 
@@ -12,7 +10,7 @@ chai.should();
 
 describe('users', () => {
 
-it('should get all users /', (done) => {
+it('should get all users', (done) => {
     chai.request(server)
       .get('/api/v1/users/contacts')
       .end((err, res)=>{
@@ -83,6 +81,46 @@ describe('login', () => {
   it('should not be able to login', (done) => {
     chai.request(server)
       .post('/api/v1/users/login')
+      .end((err, res)=>{
+        res.should.have.status(400);
+        res.body.should.be.an('object');
+        done();
+      });
+  });
+
+});
+
+// signup
+describe('signup', () => {
+
+  it('should be able to signup', (done) => {
+    const user = {
+      email: "eric@gmail.com",
+      firsName: "frank",
+      lastName: "fred",
+      password: "dhjfddjdsj"
+    };
+      chai.request(server)
+        .post('/api/v1/users/signup')
+        .send(user)
+        .end((err, res)=>{
+          res.should.have.status(200);
+          res.body.should.be.an('object');
+          done();
+        });
+    });
+  
+  
+  it('should not be able to signup', (done) => {
+    const newUser ={
+      email: "",
+      firsName: "Christian",
+      lastName: "Fred",
+      password: "sdfdsdfdfsd"
+  }
+    chai.request(server)
+      .post('/api/v1/users/signup')
+      .send(newUser)
       .end((err, res)=>{
         res.should.have.status(400);
         res.body.should.be.an('object');
