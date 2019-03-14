@@ -34,14 +34,16 @@ export const signup = ((req,res) =>{
 
 // login
 export const login = ((req,res) =>{
-    const contact = users.find(contact => contact.email === req.body.email)
-    if (contact) return res.send({ status: 400, error: 'you have been already logged in' })
+    
 
     const {error} = validateLogin.validation(req.body);
     if (error){
         res.status(400).send(error.details[0].message);
         return;
     }
+
+    const contact = users.find(contact => contact.email === req.body.email)
+    if (contact) return res.status(500).send({ status: 500, error: 'you have been already logged in' })
     
     const _id = parseInt(users.length + 1);
     const user ={

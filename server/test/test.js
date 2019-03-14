@@ -1,6 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import server from '../server';
+import users from '../models/users';
 
 
 chai.use(chaiHttp);
@@ -58,3 +59,35 @@ describe('user', () => {
       });
   });
   });
+
+  // login
+
+describe('login', () => {
+
+  it('should be able to login', (done) => {
+    const user = {
+      email: "eric@gmail.com",
+      password: "dhjfddjdsj"
+    };
+      chai.request(server)
+        .post('/api/v1/users/login')
+        .send(user)
+        .end((err, res)=>{
+          res.should.have.status(201);
+          res.body.should.be.an('object');
+          done();
+        });
+    });
+  
+  
+  it('should not be able to login', (done) => {
+    chai.request(server)
+      .post('/api/v1/users/login')
+      .end((err, res)=>{
+        res.should.have.status(400);
+        res.body.should.be.an('object');
+        done();
+      });
+  });
+
+});
