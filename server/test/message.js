@@ -82,3 +82,29 @@ describe('message', () => {
         });
     });
     });
+
+    // get all the messages
+    describe('messages', () => {
+
+        it('should get all messages', (done) => {
+            chai.request(server)
+              .get('/api/v1/users/messages')
+              .end((err, res)=>{
+                res.should.have.status(404);
+                res.body.should.be.an('object');
+                done();
+              });
+          });
+        
+        
+        it('should not be able get any message', (done) => {
+          chai.request(server)
+            .get('/api/v1/messa')
+            .end((err, res)=>{
+              res.should.have.status(404);
+              res.body.should.be.an('object');
+              done();
+            });
+        });
+        });
+        
