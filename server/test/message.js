@@ -107,4 +107,28 @@ describe('message', () => {
             });
         });
         });
-        
+
+        // get read messages
+        describe('message', () => {
+
+            it('should get read messages', (done) => {
+                chai.request(server)
+                  .get('/api/v1/users/messages/read')
+                  .end((err, res)=>{
+                    res.should.have.status(404);
+                    res.body.should.be.an('object');
+                    done();
+                  });
+              });
+            
+            
+            it('should not be able to get any read message', (done) => {
+              chai.request(server)
+                .get('/api/v1/users/messages/234344')
+                .end((err, res)=>{
+                  res.should.have.status(404);
+                  res.body.should.be.an('object');
+                  done();
+                });
+            });
+            });
