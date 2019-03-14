@@ -5,7 +5,9 @@ import validateMessages from '../helpers/messagesValidation';
 export const composeMessages =((req, res,) =>{
     const {error} = validateMessages.validation(req.body);
     if (error){
-        res.status(400).send(error.details[0].message);
+        res.status(400)} else
+        {
+            send(error.details[0].message);
         return;
     }
     const _id = parseInt(messages.length + 1);
