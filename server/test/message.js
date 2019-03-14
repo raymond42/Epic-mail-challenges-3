@@ -132,3 +132,28 @@ describe('message', () => {
                 });
             });
             });
+
+            // get read messages
+        describe('message', () => {
+
+            it('should be able to get unread mesages', (done) => {
+                chai.request(server)
+                  .get('/api/v1/users/messages/runead')
+                  .end((err, res)=>{
+                    res.should.have.status(404);
+                    res.body.should.be.an('object');
+                    done();
+                  });
+              });
+            
+            
+            it('should not be able to get unread message', (done) => {
+              chai.request(server)
+                .get('/api/v1/users/messages/')
+                .end((err, res)=>{
+                  res.should.have.status(404);
+                  res.body.should.be.an('object');
+                  done();
+                });
+            });
+            });
