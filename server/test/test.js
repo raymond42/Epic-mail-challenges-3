@@ -64,8 +64,8 @@ describe('login', () => {
 
   it('should be able to login', (done) => {
     const user = {
-      email: "eric@gmail.com",
-      password: "dhjfddjdsj"
+    email: "raymond@gmail.com",
+    password: "hdsjakajdsjd"
     };
       chai.request(server)
         .post('/api/v1/users/login')
