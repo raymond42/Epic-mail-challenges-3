@@ -42,7 +42,7 @@ export const login = ((req,res) =>{
         return;
     }
 
-    const contact = users.find(contact => contact.email === req.body.email)
+    const contact = users.find(contact => contact.email === req.body.email && contact.password === req.body.password)
     if (contact) {
          res.status(200).send(contact)
     }else{
@@ -51,6 +51,7 @@ export const login = ((req,res) =>{
         message: "user not found"
     })
 }
+
 })
 
 // get a contact
