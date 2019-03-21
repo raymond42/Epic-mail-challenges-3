@@ -1,8 +1,12 @@
-/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-shadow */
 /* eslint-disable radix */
+/* eslint-disable no-undef */
+/* eslint-disable camelcase */
+/* eslint-disable no-underscore-dangle */
+import moment from 'moment';
 import messages from '../models/messages';
 import validateMessages from '../helpers/messagesValidation';
+import pool from '../src/usingDb/db/index';
 
 // compose/post messages
 export const composeMessages = ((req, res) => {
@@ -14,18 +18,22 @@ export const composeMessages = ((req, res) => {
   const _id = parseInt(messages.length + 1);
   const newMessages = {
     id: _id,
-    createdOn: new Date(),
+    created_on: new Date(),
     subject: req.body.subject,
     message: req.body.message,
-    parentMessageId: req.body.parentMessageId,
+    receiver_id: req.body.receiver_id,
     status: req.body.status,
+    createdOn: moment().format('LL'),
   };
 
-  messages.push(newMessages);
-  res.status(201).json({
-    status: 201,
-    data: newMessages,
-  });
+  const msgdb = 'INSERT INTO messages (subject,message,receiver_id,status) VALUES($1,$2,$3,$4) RETURNING *';
+  pool.query(msgdb, [newMessages.subject, newMessages.message, newMessages.receiverId, newMessages.status])
+    .then(msgdb => (
+      res.send({
+        status: 200,
+        data: msgdb.rows[0],
+      })))
+    .catch(error => res.status(500).json({ error }));
 });
 
 // get all messages

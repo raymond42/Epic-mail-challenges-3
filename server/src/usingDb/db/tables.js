@@ -21,10 +21,9 @@ const createTables = () => {
 
   const messages = `CREATE TABLE IF NOT EXISTS
           messages(
-            id UUID PRIMARY KEY,
-            sender_id UUID,
-            receiver_id UUID,
-            parent_message_id UUID,
+            id SERIAL PRIMARY KEY,
+            sender_id INTEGER,
+            receiver_id INTEGER,
             subject VARCHAR(128) NOT NULL,
             message VARCHAR(128) NOT NULL,
             status VARCHAR(128) NOT NULL,
