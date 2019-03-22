@@ -4,7 +4,7 @@
   "description": "this web app helps people to receive and send emails",
   "main": "server.js",
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register --timeout 10000 --exit server/test/*js",
+    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register server/test/**/*.js --timeout 10000 --exit .",
     "start": "nodemon --exec babel-node server/server.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "db": "nodemon --exec babel-node ./server/src/usingDb/db/index.js",
@@ -24,6 +24,7 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
     "@babel/node": "^7.2.2",
+    "@babel/polyfill": "^7.4.0",
     "@babel/preset-env": "^7.3.4",
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
