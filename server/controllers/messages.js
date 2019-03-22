@@ -6,7 +6,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-underscore-dangle */
 import moment from 'moment';
-import messages from '../models/messages';
+// import messages from '../models/messages';
 import validateMessages from '../helpers/messagesValidation';
 import pool from '../src/usingDb/db/index';
 
@@ -17,18 +17,19 @@ export const composeMessages = ((req, res) => {
     res.status(400).send(error);
     return;
   }
-  const _id = parseInt(messages.length + 1);
+  
   const newMessages = {
     id: _id,
     subject: req.body.subject,
     message: req.body.message,
-    receiver_id: req.body.receiver_id,
+    receiverId: req.body.receiver_id,
     status: req.body.status,
     createdOn: moment().format('LL'),
   };
+  const _id = parseInt(newMessages.length + 1);
 
-  const msgdb = 'INSERT INTO messages (subject,message,receiver_id,status) VALUES($1,$2,$3,$4) RETURNING *';
-  pool.query(msgdb, [newMessages.subject, newMessages.message, newMessages.receiverId, newMessages.status])
+  const msgdb = 'INSERT INTO messages (subject,message,receiverId,status,createdOn) VALUES($1,$2,$3,$4,$5) RETURNING *';
+  pool.query(msgdb, [newMessages.subject, newMessages.message, newMessages.receiverId, newMessages.status, newMessages.createdOn])
     .then(msgdb => (
       res.send({
         status: 200,
