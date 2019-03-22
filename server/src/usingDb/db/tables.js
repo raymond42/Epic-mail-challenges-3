@@ -22,12 +22,12 @@ const createTables = () => {
   const messages = `CREATE TABLE IF NOT EXISTS
           messages(
             id SERIAL PRIMARY KEY,
-            sender_id INTEGER,
-            receiver_id INTEGER,
+            senderId INTEGER,
+            receiverId INTEGER,
             subject VARCHAR(128) NOT NULL,
             message VARCHAR(128) NOT NULL,
             status VARCHAR(128) NOT NULL,
-            created_on date
+            createdOn date
           )`;
 
   const userGroup = `CREATE TABLE IF NOT EXISTS

@@ -20,7 +20,6 @@ export const composeMessages = ((req, res) => {
   const _id = parseInt(messages.length + 1);
   const newMessages = {
     id: _id,
-    created_on: new Date(),
     subject: req.body.subject,
     message: req.body.message,
     receiver_id: req.body.receiver_id,

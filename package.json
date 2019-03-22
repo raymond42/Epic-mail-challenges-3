@@ -4,11 +4,11 @@
   "description": "this web app helps people to receive and send emails",
   "main": "server.js",
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register --timeout 10000 --exit server/test*",
+    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register --timeout 10000 --exit server/test/*js",
     "start": "nodemon --exec babel-node server/server.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "db": "babel-node ./server/src/usingDb/db/index.js",
-    "create": "babel-node ./server/src/usingDb/db/tables.js"
+    "db": "nodemon --exec babel-node ./server/src/usingDb/db/index.js",
+    "create": "nodemon --exec babel-node ./server/src/usingDb/db/tables.js"
   },
   "repository": {
     "type": "git",
