@@ -28,8 +28,8 @@ export const composeMessages = ((req, res) => {
   };
   const _id = parseInt(newMessages.length + 1);
 
-  const msgdb = 'INSERT INTO messages (subject,message,receiverId,status) VALUES($1,$2,$3,$4) RETURNING *';
-  pool.query(msgdb, [newMessages.subject, newMessages.message, newMessages.receiverId, newMessages.status])
+  const msgdb = 'INSERT INTO messages (subject,message,receiverId,status,createdOn) VALUES($1,$2,$3,$4,$5) RETURNING *';
+  pool.query(msgdb, [newMessages.subject, newMessages.message, newMessages.receiverId, newMessages.status, newMessages.createdOn])
     .then(msgdb => (
       res.send({
         status: 200,
