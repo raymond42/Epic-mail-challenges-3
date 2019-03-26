@@ -5,13 +5,20 @@ import { config } from 'dotenv';
 
 config();
 
-const pool = new Pool({
+let pool;
+if (process.env.DATABASE_URL) {
+  const connectionString = process.env.DATABASE_URL;
+  pool = new Pool({
+    connectionString,
+});  } else {
+
+  pool = new Pool({
   user: 'postgres',
   host: 'localhost',
   database: 'Epic-Mail',
   password: 'niyayindi@2019',
   port: 5432,
-});
+  }); }
 
 pool.connect();
 
